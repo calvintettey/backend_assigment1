@@ -1,8 +1,8 @@
 const { response } = require("express");
 const express = require("express");
 
-const motherRequester = (resquestObject, responseObject) => {
-  const url = responseObject.url;
+const motherRequester = (requestObject, responseObject) => {
+  const url = requestObject.url;
   responseObject.setHeader("content-type", "text/html");
   if (url === "/cat") {
     responseObject.send("<h2>This is not a cat</h2>");
