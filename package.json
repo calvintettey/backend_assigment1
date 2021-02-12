@@ -1,6 +1,11 @@
 {
   "devDependencies": {
-    "express": "^4.17.1",
-    "nodemon": "^2.0.7"
-  }
+    "express": "^4.17.1"
+  },
+  "name": "backend_assigment1",
+  "version": "1.0.0",
+  "description": "first server built solo",
+  "main": "index.js",
+  "author": "Calvin <63000172+calvintettey@users.noreply.github.com>",
+  "license": "MIT"
 }
