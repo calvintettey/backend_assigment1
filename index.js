@@ -1,5 +1,6 @@
 const { response } = require("express");
 const express = require("express");
+const server = express();
 
 const motherRequester = (requestObject, responseObject) => {
   const url = requestObject.url;
@@ -21,8 +22,15 @@ const motherRequester = (requestObject, responseObject) => {
   }
 };
 
+const path = require('path');
+
+// server.get('/cat', function(req, res) {
+//     res.sendFile(path.join(__dirname + '/html/cat.html'));
+// });
+
+
 const handleGetCat = (req, res) => {
-  res.send('<h1>Get Cat</h1>')
+  res.sendFile(path.join(__dirname + '/html/cat.html'))
 };
 
 const handlePutBook = (req, res) => {
@@ -30,19 +38,24 @@ const handlePutBook = (req, res) => {
 }
 
 const handleDeletePantry = (req, res) => {
-  res.send('<h1>Delete the food</h1>')
+  res.sendFile(path.join(__dirname + '/html/pantry.html'))
 }
 
 const handlePostRed = (req, res) => {
   res.send('<h1>Red Letter Day</h1>')
 }
 
-const server = express();
+const handleGetHotel = (req, res) => {
+  res.sendFile(path.join(__dirname + '/html/hotel.html'))
+}
+
+
 
 server.get('/cat', handleGetCat)
 server.put('/book', handlePutBook)
 server.delete('/pantry', handleDeletePantry)
 server.post('/red', handlePostRed)
+server.get('/hotel', handleGetHotel)
 
 server.listen(3000, "127.0.0.1", () => {
   console.log("the thing is working");
